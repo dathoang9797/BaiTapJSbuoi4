@@ -11,7 +11,7 @@ btnResultEl.addEventListener('click', function (e) {
   const soNguyenThuBaVal = Math.floor(+soNguyenThuBaEl.value.replace(',', '.'));
 
   if (soNguyenThuNhatVal <= soNguyenThuHaiVal && soNguyenThuNhatVal <= soNguyenThuBaVal) {
-    if (soNguyenThuHaiVal < soNguyenThuBaVal) {
+    if (soNguyenThuHaiVal <= soNguyenThuBaVal) {
       outPutResultEl.innerText = `${soNguyenThuNhatVal},${soNguyenThuHaiVal},${soNguyenThuBaVal}`;
     } else {
       outPutResultEl.innerText = `${soNguyenThuNhatVal},${soNguyenThuBaVal},${soNguyenThuHaiVal}`;
@@ -20,7 +20,7 @@ btnResultEl.addEventListener('click', function (e) {
   }
 
   if (soNguyenThuHaiVal <= soNguyenThuNhatVal && soNguyenThuHaiVal <= soNguyenThuBaVal) {
-    if (soNguyenThuNhatVal < soNguyenThuBaVal) {
+    if (soNguyenThuNhatVal <= soNguyenThuBaVal) {
       outPutResultEl.innerText = `${soNguyenThuHaiVal},${soNguyenThuNhatVal},${soNguyenThuBaVal}`;
     } else {
       outPutResultEl.innerText = `${soNguyenThuHaiVal},${soNguyenThuBaVal},${soNguyenThuNhatVal}`;
@@ -29,7 +29,7 @@ btnResultEl.addEventListener('click', function (e) {
   }
 
   if (soNguyenThuBaVal <= soNguyenThuHaiVal && soNguyenThuBaVal <= soNguyenThuNhatVal) {
-    if (soNguyenThuNhatVal < soNguyenThuHaiVal) {
+    if (soNguyenThuNhatVal <= soNguyenThuHaiVal) {
       outPutResultEl.innerText = `${soNguyenThuBaVal},${soNguyenThuNhatVal},${soNguyenThuHaiVal}`;
     } else {
       outPutResultEl.innerText = `${soNguyenThuBaVal},${soNguyenThuHaiVal},${soNguyenThuNhatVal}`;
