@@ -37,27 +37,22 @@ btnResultEl.addEventListener('click', function (e) {
   const canh3 = +canhThuBaEl.value.replace(',', '.');
 
   if (canh1 < canh2 + canh3 && canh2 < canh1 + canh3 && canh3 < canh1 + canh2) {
-    if (canh1 === canh2 && canh1 === canh3) {
-      outPutResultEl.innerText = tamGiacDeu;
-      return;
-    }
-
-    if (canh1 === canh2 || canh1 === canh3 || canh2 === canh3) {
-      outPutResultEl.innerText = tamGiacCan;
-      return;
-    }
-
-    if (canh1 * canh1 === canh2 * canh2 + canh3 * canh3 || canh2 * canh2 === canh1 * canh1 + canh3 * canh3 || canh3 * canh3 === canh1 * canh1 + canh2 * canh2) {
-      outPutResultEl.innerText = tamGiacVuong;
-      return;
-    }
-
-    if (canh1 * canh1 > canh2 * canh2 + canh3 * canh3 || canh2 * canh2 > canh1 * canh1 + canh3 * canh3 || canh3 * canh3 > canh1 * canh1 + canh2 * canh2) {
-      outPutResultEl.innerText = tamGiacTu;
-      return;
-    } else {
-      outPutResultEl.innerText = tamGiacNhon;
-      return;
+    switch (true) {
+      case canh1 === canh2 && canh1 === canh3:
+        outPutResultEl.innerText = tamGiacDeu;
+        return;
+      case canh1 === canh2 || canh1 === canh3 || canh2 === canh3:
+        outPutResultEl.innerText = tamGiacCan;
+        return;
+      case canh1 * canh1 === canh2 * canh2 + canh3 * canh3 || canh2 * canh2 === canh1 * canh1 + canh3 * canh3 || canh3 * canh3 === canh1 * canh1 + canh2 * canh2:
+        outPutResultEl.innerText = tamGiacVuong;
+        return;
+      case canh1 * canh1 > canh2 * canh2 + canh3 * canh3 || canh2 * canh2 > canh1 * canh1 + canh3 * canh3 || canh3 * canh3 > canh1 * canh1 + canh2 * canh2:
+        outPutResultEl.innerText = tamGiacTu;
+        return;
+      default:
+        outPutResultEl.innerText = tamGiacNhon;
+        return;
     }
   }
   outPutResultEl.innerText = 'Đây không phải là tam giác';
