@@ -27,7 +27,7 @@ btnResultEl.addEventListener('click', function (e) {
       }
       return;
 
-    case soNguyenThuBaVal <= soNguyenThuHaiVal && soNguyenThuBaVal <= soNguyenThuNhatVal:
+    case soNguyenThuBaVal <= soNguyenThuNhatVal && soNguyenThuBaVal <= soNguyenThuHaiVal:
       if (soNguyenThuNhatVal <= soNguyenThuHaiVal) {
         outPutResultEl.innerText = `${soNguyenThuBaVal},${soNguyenThuNhatVal},${soNguyenThuHaiVal}`;
       } else {
